@@ -116,7 +116,6 @@ class DefaultPythonLoggingService(LoggerService):
 
         Utils.create_folder_if_not_exists(os.path.join(Utils.get_project_root_path(), 'Log'))
         logging_settings_file_path = configs.settings[Values.LOGGER][Values.LOGGING_CONFIGURAION_FILE_PATH]
-        print(logging_settings_file_path)
 
         logging.config.fileConfig(logging_settings_file_path)
 

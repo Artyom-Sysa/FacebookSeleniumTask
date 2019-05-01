@@ -13,7 +13,7 @@ class ConsoleReporter(Reporter):
         print('========== REPORT ==========')
 
         for key in data:
-            print(key, data[key])
+            print(key, "-", data[key])
 
         print('========== REPORT END ==========')
         print()

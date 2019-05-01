@@ -1,14 +1,14 @@
-from Service.LoggerService.Implementation.DefaultPythonLoggingService import \
-    DefaultPythonLoggingService as Logger
-from Service.LoggerService.Implementation.DefaultPythonLoggingService import LoggingLevel as Level
+from selenium.webdriver.chrome.options import Options
+
 from Config.ConfigLoader.ConfigLoader.Implementation.IniFileConfigLoader import IniFileConfigLoader
 from Config.Configurations import Configuration
 from Config.Configurations import ValuesNames as Values
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from Utils.Utils import Utils
-from Service.SeleniumCrawler import SelemimumCrawler
 from Reporter.Implementation.ConsoleReporter import ConsoleReporter
+from Service.LoggerService.Implementation.DefaultPythonLoggingService import \
+    DefaultPythonLoggingService as Logger
+from Service.LoggerService.Implementation.DefaultPythonLoggingService import LoggingLevel as Level
+from Service.SeleniumCrawler import SelemimumCrawler
+
 
 class Launcher:
     def __load_configs(self):
@@ -43,5 +43,6 @@ class Launcher:
         self.__start__selenium()
 
 if __name__ == '__main__':
+    Logger.add_to_journal(__file__, Level.INFO, "Program started")
     launcher = Launcher()
     launcher.start()
